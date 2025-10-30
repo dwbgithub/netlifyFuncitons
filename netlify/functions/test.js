@@ -6,7 +6,7 @@ const pool = new Pool({
     rejectUnauthorized: true
   }
 });
-export const handler = async (event) => {
+exports.handler = async (event) => {
   let client = null;
   try {
     // 从连接池获取一个数据库客户端
