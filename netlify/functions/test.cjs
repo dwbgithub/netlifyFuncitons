@@ -1,4 +1,4 @@
-import { Pool } from 'pg'; 
+const { Pool } = require('pg');
 const connectionString = 'postgresql://neondb_owner:npg_jUePN2bJsC8T@ep-rough-voice-ad7rnzns-pooler.c-2.us-east-1.aws.neon.tech/neondb';
 const pool = new Pool({
   connectionString,
@@ -6,7 +6,7 @@ const pool = new Pool({
     rejectUnauthorized: true
   }
 });
-exports.handler = async (event) => {
+export const handler = async (event) => {
   let client = null;
   try {
     // 从连接池获取一个数据库客户端
